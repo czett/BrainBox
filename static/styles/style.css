@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    font-family: 'Poppins';
+}
+
+body, html{
+    overflow: hidden;
+    margin: 0;
+}
+
+/* Example Code for navbar, you can remove it :) */
+
+.nav{
+    width: 100vw;
+    box-sizing: border-box;
+    height: 10vh;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 5vw;
+    align-items: center;
+    border-bottom: 1px solid black;
+}
+
+.nav .logo{
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.nav .links{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 35%;
+}
+
+a.link{
+    color: black;
+    text-decoration: none;
+}
