@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block navbar %}{% endblock %}
+
+{% block content %}
+<div class="login-form">
+    <form action="/login/l/process" method="post" enctype="multipart/form-data" id="logreg-form">
+        <input type="text" placeholder="username" name="un" required>
+        <input type="text" placeholder="password" name="pw" required>
+        <button type="submit">submit</button>
+
+        <label for="l">login</label>
+        <input type="radio" required name="action" id="l" checked onchange="logregType()">
+
+        <label for="r">register</label>
+        <input type="radio" required name="action" id="r" onchange="logregType()">
+
+        <script>
+            function logregType(){
+                if (document.getElementById('l').checked == true){
+                    document.getElementById("logreg-form").action = "/login/l/process";
+                }else{
+                    document.getElementById("logreg-form").action = "/login/r/process";
+                }
+            }
+        </script>
+    </form>
+</div>
+{% endblock %}

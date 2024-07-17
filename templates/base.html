@@ -8,6 +8,7 @@
     <script src="{{url_for('static', filename='scripts/script.js')}}"></script>
 </head>
 <body>
+    {% block navbar %}
     <div class="nav">
         <div class="logo">
             BrainBox
@@ -19,5 +20,8 @@
             <a href="#" class="link">Login</a>
         </div>
     </div>
+    {% endblock %}
+
+    {% block content %}{% endblock %}
 </body>
 </html>
