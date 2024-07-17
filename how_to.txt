@@ -1,0 +1,8 @@
+- install Python from python.org
+- run "pip install flask" in the cmd
+- run the app.py file
+- visit the URL given in the CLI (127.0.0.1:5000)
+
+- folder structure should be clear, it works just like it's now
+
+have fun!
