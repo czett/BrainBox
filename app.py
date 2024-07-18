@@ -2,7 +2,7 @@ from flask import Flask, render_template, redirect, url_for, session, request
 import string, random
 
 app = Flask(__name__)
-app.secret_key = ''.join(random.choice(string.ascii_letters) for i in range(24))
+app.secret_key = [random.choice(string.ascii_letters) for i in range(24)]
 
 @app.route("/")
 def start():
@@ -10,15 +10,16 @@ def start():
 
 @app.route("/login")
 def login():
+    return render_template("login.html")
     if not session:
         return redirect("/")
-    return render_template("login.html")
+    
 
 @app.route("/login/<a>/process", methods=["POST"])
 def process_login(a):
     #if not session:
     #    return redirect("/")
-
+    
     user = request.form["un"]
     password = request.form["pw"]
 
