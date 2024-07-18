@@ -4,24 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BrainBox</title>
-    <link rel="stylesheet" href="{{url_for('static', filename='styles/style.css')}}">
-    <script src="{{url_for('static', filename='scripts/script.js')}}"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/style.css') }}">
+    <script src="{{ url_for('static', filename='scripts/script.js') }}"></script>
 </head>
 <body>
-    {% block navbar %}
-    <div class="nav">
-        <div class="logo">
-            BrainBox
+    <nav>
+        <!-- Navigation bar -->
+        <div class="nav">
+            <div class="logo">
+                BrainBox
+            </div>
+            <div class="links">
+                <a href="#" class="link">Home</a>
+                <a href="#" class="link">Study</a>
+                <a href="#" class="link">Explore</a>
+                <a href="#" class="link">Login</a>
+            </div>
         </div>
-        <div class="links">
-            <a href="#" class="link">Home</a>
-            <a href="#" class="link">Study</a>
-            <a href="#" class="link">Explore</a>
-            <a href="#" class="link">Login</a>
-        </div>
-    </div>
-    {% endblock %}
-
-    {% block content %}{% endblock %}
+    </nav>
 </body>
 </html>
