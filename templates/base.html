@@ -6,11 +6,13 @@
     <title>BrainBox</title>
     <link rel="stylesheet" href="{{url_for('static', filename='styles/style.css')}}">
     <script src="{{url_for('static', filename='scripts/script.js')}}"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
 <body>
     {% block navbar %}
     <div class="nav">
         <div class="logo">
+            <span class="material-symbols-outlined">school</span>
             BrainBox
         </div>
         <div class="links">
@@ -22,6 +24,18 @@
     </div>
     {% endblock %}
 
-    {% block content %}{% endblock %}
+    <div class="pagecontent">
+        {% block content %}{% endblock %}
+    </div>
+
+    {% block footer %}
+    <div class="footer">
+        <div class="links">
+            <div class="link">contact</div>
+            <div class="link">2024 @czett</div>
+            <div class="link">about us</div>
+        </div>
+    </div>
+    {% endblock %}
 </body>
 </html>

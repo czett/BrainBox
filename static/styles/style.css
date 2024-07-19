@@ -1,12 +1,61 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+
+:root{
+    --navh: 10vh;
+    --hp: 5vw;
+    --sl: #7149c6;
+    --sd: #370d97;
+    --fg: #4f4f4f;
+    --bg: #fff;
+    --af: #e1d6f8;
+    --ac: #eddd4a;
+}
 
 *{
-    font-family: 'Poppins';
+    font-family: "Plus Jakarta Sans";
+    color: var(--fg);
+}
+
+::-webkit-scrollbar{
+    display: none;
+}
+
+::selection{
+    background-color: var(--ac);
+    color: var(--fg);
 }
 
 body, html{
-    overflow: hidden;
+    overflow-x: hidden;
     margin: 0;
+    background-color: var(--bg);
+}
+
+.pagecontent{
+    width: 100%;
+    padding-bottom: 5vh;
+}
+
+.footer{
+    width: 100%;
+    background: linear-gradient(30deg, var(--sd), var(--sl));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3vh 0;
+}
+
+.footer .links{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8vw;
+}
+
+.footer .links .link{
+    color: #fff;
+    font-size: .75rem;
+    cursor: pointer;
 }
 
 /* Example Code for navbar, you can remove it :) */
@@ -14,17 +63,29 @@ body, html{
 .nav{
     width: 100vw;
     box-sizing: border-box;
-    height: 10vh;
+    height: var(--navh);
     display: flex;
     justify-content: space-between;
-    padding: 0 5vw;
+    padding: 0 var(--hp);
     align-items: center;
-    border-bottom: 1px solid black;
+    position: fixed;
+    z-index: 100;
+    backdrop-filter: blur(7px);
 }
 
 .nav .logo{
     font-size: 1.8rem;
     font-weight: 700;
+    color: var(--af);
+    display: flex;
+    align-items: center;
+    gap: .3vw;
+    cursor: pointer;
+}
+
+.nav .logo span{
+    font-size: 2.4rem;
+    color: var(--af);
 }
 
 .nav .links{
@@ -37,4 +98,242 @@ body, html{
 a.link{
     color: black;
     text-decoration: none;
+}
+
+.nav *, .nav div *, .banner *{
+    color: var(--bg);
+}
+
+.banner{
+    padding: var(--navh) var(--hp);
+    width: 100%;
+    aspect-ratio: 4;
+    background: linear-gradient(30deg, var(--sd), var(--sl));
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+}
+
+.banner .text{
+    width: 35%;
+}
+
+.banner .text h1{
+    font-size: 3.5rem;
+    font-weight: 800;
+    line-height: 100%;
+}
+
+.banner .text p{
+    color: var(--af);
+}
+
+button{
+    background-color: var(--ac);
+    border-radius: .5rem;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    padding: .4vw .8vw;
+    color: var(--fg);
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin: .75vw 0;
+    transition: 200ms;
+    color: var(--fg) !important;
+}
+
+button:hover{
+    filter: brightness(1.1);
+}
+
+.banner .graphics{
+    width: 35%;
+    position: relative;
+}
+
+.banner .graphics span{
+    font-size: 30rem;
+    color: var(--sd);
+    filter: blur(5px);
+    position: absolute;
+    transform: translate(-2vw, -2vw);
+    transition: 500ms;
+}
+
+.banner .graphics span:hover{
+    filter: blur(5px) brightness(1.2);
+}
+
+.banner .graphics span:nth-child(2){
+    color: var(--sl);
+    transform: translate(2vw, 2vw);
+}
+
+.features{
+    background-color: var(--bg);
+    width: 100%;
+    aspect-ratio: 3;
+    position: relative;
+    padding-top: 12vh;
+    box-sizing: border-box;
+}
+
+.features .selector {
+    position: absolute;
+    inset: 0% auto auto 50%;
+    background-color: var(--bg);
+    display: flex;
+    transform: translate(-50%, -50%);
+    border-radius: 1rem;
+    box-shadow: 0 0 10px 1px #eee;
+    width: 50%;
+    padding: 1vw;
+    box-sizing: border-box;
+    justify-content: space-between;
+    align-items: center;
+    aspect-ratio: 5;
+}
+
+.features .selector .option{
+    width: 32%;
+    height: 100%;
+    box-sizing: border-box;
+    border-radius: 1rem;
+    padding: .66vw;
+    border: 1px solid var(--fg);
+    cursor: pointer;
+    transition: 500ms;
+}
+
+.features .selector .option .icon-circle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    aspect-ratio: 1;
+    height: 60%;
+}
+
+.features .selector .option .icon-circle span{
+    font-size: 4rem;
+    color: var(--bg);
+}
+
+.features .selector .option .title{
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-top: .25vw;
+}
+
+.features .selector .option .see-more{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: .15vw;
+    margin-top: -.2vw;
+}
+
+.features .selector .option:nth-child(1) .icon-circle{
+    background: linear-gradient(45deg, #34cb9a, #b5ebdf);
+}
+
+.features .selector .option:nth-child(2) .icon-circle{
+    background: linear-gradient(45deg, #ee6176, #fec087);
+}
+
+.features .selector .option:nth-child(3) .icon-circle{
+    background: linear-gradient(45deg, #7edafd, #4490f6);
+}
+  
+.selector:hover .option:not(:hover) {
+    filter: blur(3px);
+}
+
+.features h1{
+    text-align: center;
+    font-size: 3.5rem;
+    font-weight: 800;
+    line-height: 100%;
+    margin-bottom: 1.5vh;
+}
+
+.features h3{
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 100%;
+    margin: 0;
+}
+
+.features .snippets{
+    width: 50%;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 5vh auto;
+}
+
+.snippets .snippet{
+    width: 30%;
+    overflow: hidden;
+    border-radius: 1rem;
+    position: relative;
+    transition: 500ms;
+    cursor: pointer;
+}
+
+.snippets .snippet .img{
+    width: 100%;
+    aspect-ratio: 2/3;
+    overflow: hidden;
+}
+
+.img{
+    max-width: 100%;
+}
+
+.gradient{
+    position: absolute;
+    inset: 0% auto auto 0%;
+    background: linear-gradient(to bottom, var(--sl), transparent);
+    width: 100%;
+    height: 60%;
+}
+
+.snippet .title{
+    display: block;
+    position: absolute;
+    inset: 5% auto auto 50%;
+    transform: translateX(-50%);
+    font-size: 2rem;
+    font-weight: 700;
+    color: #fff;
+    width: 100%;
+    text-align: left;
+    box-sizing: border-box;
+    padding: 0 1vw;
+}
+
+.snippet .see-more{
+    display: block;
+    position: absolute;
+    inset: 13% auto auto 50%;
+    transform: translateX(-50%);
+    font-weight: 600;
+    color: #fff;
+    width: 100%;
+    text-align: left;
+    box-sizing: border-box;
+    padding: 0 1vw;
+    transition: 250ms;
+}
+
+.snippet .see-more:hover{
+    color: var(--ac);
+}
+
+.snippet:hover{
+    scale: 1.025;
 }
