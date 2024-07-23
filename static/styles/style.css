@@ -337,3 +337,31 @@ button:hover{
 .snippet:hover{
     scale: 1.025;
 }
+
+@media (width < 2100px){
+    .banner{
+        aspect-ratio: 2.75;
+    }
+
+    .selector{
+        width: 65% !important;
+    }
+
+    .snippets{
+        width: 65% !important;
+    }
+
+    .snippet .see-more{
+        display: none;
+    }
+
+    .features .selector .option .icon-circle span{
+        font-size: 2.75rem;
+    }
+}
+
+@media (width < 1500px){
+    .features .selector .option .see-more{
+        display: none;
+    }
+}
